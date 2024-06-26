@@ -17,13 +17,13 @@ if (isset($_POST['place_order'])    ) {
     $stmt = $conn->prepare("INSERT INTO orders (order_cost, order_status, user_id, user_phone, user_city, user_address, order_date)
                 VALUES (?,?,?,?,?,?,?);   ");
     $stmt->bind_param('isiisss',$order_cost,$order_status,$user_id,$phone,$city,$address,$order_date);
+    
     $stmt->execute();
 
     $order_id = $stmt->inseri_id;
 
     echo $order_id;
 
-    
 }
 
 
