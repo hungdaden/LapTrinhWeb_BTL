@@ -42,3 +42,69 @@ h5{
 h6{
     color: #D8D8D8;
 }
+
+button{
+    font-size: 0.8rem;
+    font-weight: 900;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5 ease;
+    border-radius: 20px;
+}
+
+button:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.navbar{
+    font-size: 16px;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    top: 0;
+    left: 0;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    padding: 0 20px;
+    color: #000;
+    transition: 0.4s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar i:hover{
+    color: grey;
+}
+
+
+.navbar i{
+    font-size: 1.2rem;
+    padding: 0 0.7px;
+    transition: -0.4s ease;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#home{
+    background-image: url(https://product.hstatic.net/1000306633/product/hd_t6.2485_7abdd0b75b58448a8840cfcbdce3fa97.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    background-position-x: 300px;
+    background-position-y: 1400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#home span{
+    color: blue;
+}
