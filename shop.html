@@ -9,10 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <style>
+      .product img{
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        object-fit: cover;
+      }
+
+      .pagination a{
+        color: black;
+      }
+
+      .pagination li:hover a{
+        color: white;
+        background-color: black;
+      }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary py-3 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
         <div class="container">
           <img style="height: 25px;" style="width: 50px;" src="//theme.hstatic.net/1000306633/1001194548/14/logo.png?v=206" alt="">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,11 +39,11 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
               </li>
               
               <li class="nav-item">
-                <a class="nav-link" href="#">Shop</a>
+                <a class="nav-link" href="shop.html">Shop</a>
               </li>
 
               <li class="nav-item">
@@ -48,12 +65,140 @@
         </div>
       </nav>
       
+      <!--Feature-->
+
+      <section id="feature" class="my-5 py-5">
+        <div class="container text-center mt-5 py-5">
+            <br>
+            <h3>Our Products</h3>
+            <hr class="mx-auto">
+            <p style="font-size: 20px;">Cac san pham dinh cao</p>
+        </div>
+        <div class="row mx-auto container">
+            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+                <img class="img-fluid mb-3" src="assets/imgs/featured1.jpeg" alt="">
+                <h5 class="p-name">Hut Di</h5>
+                <h4 class="p-price">$200</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+                <img class="img-fluid mb-3" src="assets/imgs/featured2.jpeg" alt="">
+                <h5 class="p-name">Hut Di</h5>
+                <h4 class="p-price">$200</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+                <img class="img-fluid mb-3" src="assets/imgs/featured3.jpeg" alt="">
+                <h5 class="p-name">Hut Di</h5>
+                <h4 class="p-price">$200</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+                <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
+                <h5 class="p-name">Hut Di</h5>
+                <h4 class="p-price">$200</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+              <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
+              <h5 class="p-name">Hut Di</h5>
+              <h4 class="p-price">$200</h4>
+              <button class="buy-btn">Buy Now</button>
+          </div>
+          <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
+            <h5 class="p-name">Hut Di</h5>
+            <h4 class="p-price">$200</h4>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+        <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
+          <h5 class="p-name">Hut Di</h5>
+          <h4 class="p-price">$200</h4>
+          <button class="buy-btn">Buy Now</button>
+      </div>
+      <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
+        <h5 class="p-name">Hut Di</h5>
+        <h4 class="p-price">$200</h4>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+
+      <nav aria-label="Page navigation example"></nav>
+      <ul class="pagination mt-5">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+
+        </div>
+    </section>
 
 
 
 
 
 
+    <!--Footer-->
+    <footer class="mt-5 py-5">
+      <div class="row container mx-auto pt-5">
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <img class="logo" src="https://theme.hstatic.net/1000306633/1001194548/14/logo.png?v=206" />
+          <p class="pt-3">We provide the best products for the most affordable pricess</p>
+
+        </div>
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <h5 class="pb-2">Featured</h5>
+          <ul class="text-uppercase">
+            <li><a href="#">men</a></li>
+            <li><a href="#">women</a></li>
+            <li><a href="#">boys</a></li>
+            <li><a href="#">girls</a></li>
+            <li><a href="#">new arrivals</a></li>
+            <li><a href="#">clothes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+            <h5 class="pb-2">Contact Us</h5>
+            <div>
+              <h6 class="text-uppercase">Adress</h6>
+              <p>Trieu Khuc, Thanh Xuan, Ha Noi</p>
+            </div>
+        
+            <div>
+              <h6 class="text-uppercase">Phone</h6>
+              <p>1900 10 0 biet</p>
+            </div>
+            <div>
+              <h6 class="text-uppercase">Email</h6>
+              <p>info@email.com</p>
+            </div>
+        </div>        
+        </div>
+      </div>
+
+
+
+      <div class="copyright mt-5">
+        <div class="row container mx-auto">
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <img style="height: 100px;" style="width: 150px;" src="assets/imgs/payment.jpg" />
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
+            <p>Group 4 @ 2024 All Right Reserved</p>
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </footer>
 
 
     <script src="https://kit.fontawesome.com/2f3e6ad59f.js" crossorigin="anonymous"></script>

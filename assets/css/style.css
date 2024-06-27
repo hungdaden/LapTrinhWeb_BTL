@@ -295,6 +295,11 @@ footer p{
     color: white;
 }
 
+footer .copyright img{
+    height: 10%;
+    width: 60%;
+}
+
 /* Cart */
 
 .cart table{
