@@ -58,7 +58,7 @@ button{
     padding: 13px 30px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 0.5 ease;
+    transition: 0.4s ease-in-out;
     border-radius: 20px;
 }
 
@@ -74,6 +74,7 @@ button:hover{
     padding-bottom: 2rem !important;
     top: 0;
     left: 0;
+    box-shadow: 0 2px 10px gray;
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -172,6 +173,47 @@ button:hover{
     opacity: 0.7;
     transform: scale(1.1);
     transition: 0.3s all;
+}
+
+.product .buy-btn{
+    background-color: black;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.3s all;
+}
+
+.product:hover .buy-btn{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+hr{
+    width: 60px;
+    height: 3px !important;
+    opacity: 1 !important;
+    background-color: black;
+}
+
+#banner {
+    background-image: url(https://product.hstatic.net/1000306633/product/sweater_wolf_pink_full_b2147467c54f4f20928a625b596af1da.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    background-position-x: 300px;
+    background-position-y: 1600px;
+    background-attachment: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#banner h1{
+    color: red;
+}
+
+#banner button{
+    background-color: black;
 }
 
 .small-img-group{
