@@ -453,3 +453,36 @@ th:last-child{
     color: #000;
     text-decoration: none;
 }
+
+/* Orders */
+
+.orders table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders .product-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.orders th{
+    padding: 5px 10px;
+    color: white;
+    background-color: black;
+    text-align: left;
+}
+
+.orders th:nth-child(2){
+    text-align: right;
+}
+
+.orders td{
+    padding: 10px 20px;
+}
+
+.orders td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
