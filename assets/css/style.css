@@ -447,11 +447,21 @@ th:last-child{
 #account-form #change-pass-btn{
     color: #fff;
     background-color: #000;
+    transition: 0.3s ease-in-out;
+}
+
+#account-form #change-pass-btn:hover{
+    color: #fff;
+    background-color: #000;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
 }
 
 #account-info #orders-btn,#logout-btn{
-    color: #000;
+    color: black;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 /* Orders */
