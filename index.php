@@ -148,7 +148,7 @@
       </div>
     </section>
 
-    <!--Clothes-->
+    <!--Feature/Clothes-->
 
     <section id="feature" class="my-5">
       <div class="container text-center mt-5 py-5">
@@ -158,30 +158,24 @@
           <p style="font-size: 20px;">quan ao dang cap</p>
       </div>
       <div class="row mx-auto container-fluid">
+
+      <?php 
+      include('<server/get_featured_products.php');
+
+
+       ?>
+
+      <?php while ($row= $featured_products->fetch_assoc()) { ?>
+
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-              <img class="img-fluid mb-3" src="assets/imgs/clothes1.jpeg" alt="">
-              <h5 class="p-name">Hut Di</h5>
-              <h4 class="p-price">$200</h4>
+              <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image'] ?>" alt="">
+              <h5 class="p-name"><?php echo $row['product_name'] ?></h5>
+              <h4 class="p-price">$ <?php echo $row['product_price'] ?></h4>
               <button class="buy-btn">Buy Now</button>
           </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-              <img class="img-fluid mb-3" src="assets/imgs/clothes2.jpeg" alt="">
-              <h5 class="p-name">Hut Di</h5>
-              <h4 class="p-price">$200</h4>
-              <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-              <img class="img-fluid mb-3" src="assets/imgs/clothes3.jpeg" alt="">
-              <h5 class="p-name">Hut Di</h5>
-              <h4 class="p-price">$200</h4>
-              <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-              <img class="img-fluid mb-3" src="assets/imgs/clothes4.jpeg" alt="">
-              <h5 class="p-name">Hut Di</h5>
-              <h4 class="p-price">$200</h4>
-              <button class="buy-btn">Buy Now</button>
-          </div>
+          
+
+      <?php } ?>
       </div>
   </section>
 
