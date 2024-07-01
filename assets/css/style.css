@@ -520,3 +520,8 @@ th:last-child{
     background-color: black;
 }
 
+/* Contact */
+#contact span{
+    color: #000;
+    
+}
