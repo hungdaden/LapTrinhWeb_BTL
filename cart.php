@@ -1,3 +1,133 @@
+<?php 
+
+session_start();
+
+if (isset($_POST['add_to_cart'])) {
+
+      // user da add product
+    if (isset($_SESSION['cart'])) {
+
+      $products_array_ids = array_column($_SESSION['cart'],"product_id");
+      // check xem da them chua
+      if (!in_array($_POST['product_id'], $products_array_ids) ) {
+        
+
+              $product_id = $_POST['product_id'];
+
+              $product_array = array(
+                              'product_id' => $_POST['product_id'],
+                              'product_name' => $_POST['product_name'],
+                              'product_price' => $_POST['product_price'],
+                              'product_image' => $_POST['product_image'],
+                              'product_quantity' => $_POST['product_quantity']
+              );
+
+              $_SESSION['cart'][$product_id] = $product_array;
+
+
+
+      } else {
+        
+           echo '<script>alert("Product was already to cart");</script>';
+
+      }
+      
+
+      
+
+
+      
+
+
+      
+  
+
+      // product dau tien
+    }else {
+
+      $product_id = $_POST['product_id'];
+      $product_name = $_POST['product_name'];
+      $product_price = $_POST['product_price'];
+      $product_image = $_POST['product_image'];
+      $product_quantity = $_POST['product_quantity'];
+
+      $product_array = array(
+                      'product_id' => $product_id,
+                      'product_name' => $product_name,
+                      'product_price' => $product_price,
+                      'product_image' => $product_image,
+                      'product_quantity' => $product_quantity
+      );
+
+      $_SESSION['cart'][$product_id] = $product_array;
+
+
+      // total
+      calculateTotalCart();
+      
+    }// remove product
+} else if(isset($_POST['remove_product'])) {
+      
+      $product_id = $_POST['product_id'];
+      unset($_SESSION['cart'][$product_id]);
+
+      calculateTotalCart();
+// sua so luong
+} else if(isset($_POST['edit_quantity'])){
+
+  $product_id = $_POST['product_id'];
+
+  $product_quantity = $_POST['product_quantity'];
+
+  $product_array = $_SESSION['cart'][$product_id];
+
+  $product_array['product_quantity'] = $product_quantity;
+
+  $_SESSION['cart'][$product_id] = $product_array;
+
+  calculateTotalCart();
+
+}
+
+
+ else {
+  header('location: index.php');
+}
+
+
+
+function calculateTotalCart(){
+
+    $total = 0;
+
+    foreach ($_SESSION['cart'] as $key => $value) {
+      
+      $product = $_SESSION['cart'][$key];
+
+      $price = $product['product_price'];
+
+      $quantity = $product['product_quantity'];
+
+      $total = $total + ($price * $quantity);
+
+
+    }
+
+    $_SESSION['total'] = $total;
+
+}
+
+
+
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,84 +197,51 @@
             </tr>
 
             <!--product 1-->
+
+            <?php foreach ($_SESSION['cart'] as $key => $value) { ?>
+
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/featured1.jpeg" />
+                        <img src="assets/imgs/ <?php echo $value['product_image']; ?>" />
                         <div>
-                            <p>White Shoes</p>
-                            <small><span>$</span>155</small>
+                            <p><?php echo $value['product_name']; ?></p>
+                            <small><span>$</span><?php echo $value['product_price']; ?></small>
                             <br>
-                            <a href="" class="remove-btn" href="#">remove</a>
+                            <form method="POST" action="cart.php">
+
+                            <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
+
+                            <input type="submit" class="remove-btn" name="remove_product" value="remove"/>
+                        
+                            </form>
+                            
                         </div>
                     </div>
                 </td>
 
 
                 <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn" href="#">Edit</a>
+                    
+                    <form method="POST" action="cart.php">
+                    
+                    <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
+                    <input type="number" value="<?php echo $value['product_quantity']; ?>"/>
+                    <input type="submit" class="edit-btn" value="edit" name="edit_quantity"/>
+                    
+                    </form>
+                    
                 </td>
 
                 <td>
                     <span>$</span>
-                    <span class="product-price">155</span>
+                    <span class="product-price"><?php echo $value['product_quantity'] * $value['product_price']; ?></span>
                 </td>
             </tr>
 
-            <!--Product 2-->
+            
+              <?php } ?>
 
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/featured1.jpeg" />
-                        <div>
-                            <p>White Shoes</p>
-                            <small><span>$</span>155</small>
-                            <br>
-                            <a href="" class="remove-btn" href="#">remove</a>
-                        </div>
-                    </div>
-                </td>
-
-
-                <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn" href="#">Edit</a>
-                </td>
-
-                <td>
-                    <span>$</span>
-                    <span class="product-price">155</span>
-                </td>
-            </tr>
-
-            <!--Product 3-->
-
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/featured1.jpeg" />
-                        <div>
-                            <p>White Shoes</p>
-                            <small><span>$</span>155</small>
-                            <br>
-                            <a href="" class="remove-btn" href="#">remove</a>
-                        </div>
-                    </div>
-                </td>
-
-
-                <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn" href="#">Edit</a>
-                </td>
-
-                <td>
-                    <span>$</span>
-                    <span class="product-price">155</span>
-                </td>
-            </tr>
             
         </table>
 
@@ -153,13 +250,10 @@
 
         <div class="cart-total">
             <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>$155</td>
-                </tr>
+
                 <tr>
                     <td>Total</td>
-                    <td>$155</td>
+                    <td>$ <?php echo $_SESSION['total']; ?></td>
                 </tr>
             </table>
         </div>
