@@ -38,7 +38,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
                 <a href="account.html"><i class="fa fa-user"></i></a>
               </li>
 

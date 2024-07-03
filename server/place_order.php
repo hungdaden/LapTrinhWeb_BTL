@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 session_start();
 
 include('connection.php');
@@ -21,7 +21,7 @@ if (isset($_POST['place_order'])    ) {
 
     $stmt->execute();
 
-    $order_id = $stmt->inseri_id;
+    $order_id = $stmt->insert_id;
 
     echo $order_id;
 
@@ -57,4 +57,4 @@ if (isset($_POST['place_order'])    ) {
 }
 
 
-?> -->
+?>

@@ -31,16 +31,6 @@ if (isset($_POST['add_to_cart'])) {
            echo '<script>alert("Product was already to cart");</script>';
 
       }
-      
-
-      
-
-
-      
-
-
-      
-  
 
       // product dau tien
     }else {
@@ -63,9 +53,13 @@ if (isset($_POST['add_to_cart'])) {
 
 
       // total
-      calculateTotalCart();
       
-    }// remove product
+      
+    }
+    
+    calculateTotalCart();
+    
+    // remove product
 } else if(isset($_POST['remove_product'])) {
       
       $product_id = $_POST['product_id'];
@@ -91,7 +85,7 @@ if (isset($_POST['add_to_cart'])) {
 
 
  else {
-  header('location: index.php');
+   // header('location: index.php');
 }
 
 
@@ -153,11 +147,11 @@ function calculateTotalCart(){
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="index.php">Home</a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="#">Shop</a>
+            <a class="nav-link" href="shop.php">Shop</a>
           </li>
 
           <li class="nav-item">
@@ -165,11 +159,13 @@ function calculateTotalCart(){
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
 
           <li class="nav-item">
-            <i class="fa fa-shopping-cart"></i>
+            <a href="cart.php">
+              <i class="fa fa-shopping-cart"></i>
+            </a>
             <i class="fa fa-user"></i>
           </li>
 
@@ -261,7 +257,10 @@ function calculateTotalCart(){
 
 
         <div class="checkout-container">
-            <button class="btn checkout-btn">Checkout</button>
+          <form method="POST" action="checkout.php">
+            <input type="submit" class="btn checkout-btn" value="Checkout" name="checkout">
+            
+          </form>
         </div>
 
 
