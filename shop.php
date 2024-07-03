@@ -1,3 +1,24 @@
+<?php 
+
+include('connection.php');
+
+$stmt = $conn->prepare("SELECT * FROM products");
+
+$stmt->execute();
+
+$products = $stmt->get_result();
+
+
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,6 +86,71 @@
         </div>
       </nav>
       
+      <!--Search-->
+      <section id="search" class="my-5 py-5 ms-2">
+        <div class="container mt-5 py-5">
+          <p>Search Products</p>
+          <hr>
+        </div>
+
+            <form>
+              <div class="row mx-auto container">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+
+                  <p>Category</p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category_one">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Shoes
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category_two" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Coats
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category_two" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Watches
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="category" id="category_two" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Bags
+                      </label>
+                    </div>
+
+                </div>
+
+              </div>
+
+              <div class="row mx-auto container mt-5">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <p>Price</p>
+                    <input type="range" class="form-range w-50" min="1" max="1000" id="customRange2">
+                    <div class="w-50">
+                      <span style="float: left;">1</span>
+                      <span style="float: right;">1000</span>
+                    </div>
+                </div>
+              </div>
+
+              <div class="form-group my-3 mx-3">
+                <input type="submit" name="search" value="Search" class="btn btn-primary">
+              </div>
+
+            </form>
+      </section>
+
+
+
       <!--Feature-->
 
       <section id="feature" class="my-5 py-5">
@@ -74,55 +160,22 @@
             <hr class="mx-auto">
             <p style="font-size: 20px;">Cac san pham dinh cao</p>
         </div>
+
+
+
+
         <div class="row mx-auto container">
+
+
+
+
             <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
                 <img class="img-fluid mb-3" src="assets/imgs/featured1.jpeg" alt="">
                 <h5 class="p-name">Hut Di</h5>
                 <h4 class="p-price">$200</h4>
                 <button class="buy-btn">Buy Now</button>
             </div>
-            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured2.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured3.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-              <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
-              <h5 class="p-name">Hut Di</h5>
-              <h4 class="p-price">$200</h4>
-              <button class="buy-btn">Buy Now</button>
-          </div>
-          <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
-            <h5 class="p-name">Hut Di</h5>
-            <h4 class="p-price">$200</h4>
-            <button class="buy-btn">Buy Now</button>
-        </div>
-        <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
-          <h5 class="p-name">Hut Di</h5>
-          <h4 class="p-price">$200</h4>
-          <button class="buy-btn">Buy Now</button>
-      </div>
-      <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-        <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
-        <h5 class="p-name">Hut Di</h5>
-        <h4 class="p-price">$200</h4>
-        <button class="buy-btn">Buy Now</button>
-    </div>
+            
 
       <nav aria-label="Page navigation example"></nav>
       <ul class="pagination mt-5">
