@@ -69,14 +69,17 @@ if (isset($_POST['add_to_cart'])) {
 // sua so luong
 } else if(isset($_POST['edit_quantity'])){
 
+  // lay id va so luong cua product tu form
   $product_id = $_POST['product_id'];
-
   $product_quantity = $_POST['product_quantity'];
 
+  // lay product theo id tu session cart vao mang 1 chieu 1 product
   $product_array = $_SESSION['cart'][$product_id];
 
+  // update so luong product
   $product_array['product_quantity'] = $product_quantity;
 
+  // update lai product trong array
   $_SESSION['cart'][$product_id] = $product_array;
 
   calculateTotalCart();
@@ -199,7 +202,7 @@ function calculateTotalCart(){
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/ <?php echo $value['product_image']; ?>" />
+                        <img src="assets/imgs/<?php echo $value['product_image']; ?>" />
                         <div>
                             <p><?php echo $value['product_name']; ?></p>
                             <small><span>$</span><?php echo $value['product_price']; ?></small>
@@ -221,8 +224,8 @@ function calculateTotalCart(){
                     
                     <form method="POST" action="cart.php">
                     
-                    <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
-                    <input type="number" value="<?php echo $value['product_quantity']; ?>"/>
+                    <input type="hidden" name="product_id" value="<?php echo $value['product_id'];?>"/>
+                    <input type="number" name="product_quantity" value="<?php echo $value['product_quantity'];?>"/>
                     <input type="submit" class="edit-btn" value="edit" name="edit_quantity"/>
                     
                     </form>
