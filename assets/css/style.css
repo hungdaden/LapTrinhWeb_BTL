@@ -113,6 +113,10 @@ button:hover{
     }
 }
 
+    .nav-item a i{
+        color: black;
+    }
+
 #home{
     background-image: url(https://product.hstatic.net/1000306633/product/hd_t6.2485_7abdd0b75b58448a8840cfcbdce3fa97.jpg);
     width: 100%;
@@ -147,7 +151,6 @@ button:hover{
     color: black;
     font-weight: bold;
     transition: 0.4s ease;
-    opacity: 0.7;
     background-color: white;
     margin-left: 9rem;
 }
@@ -240,13 +243,13 @@ hr{
 }
 
 .single-product .buy-btn{
-    background-color: #fb774b;
+    background-color: black;
     opacity: 1;
     transition: 0.4s all;
 }
 
 .single-product .buy-btn:hover{
-    background-color: #222;
+    background-color: black;
     
 }
 
@@ -341,20 +344,44 @@ footer .copyright img{
 }
 
 .cart .remove-btn{
-    color: #000;
+    color: white;
     text-decoration: none;
-    font-size: 14px;
-    background-color: white;
+    font-size: 16px;
+    background-color: black;
     border: none;
+    border-radius: 5px;
     width: 100%;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+    medium{
+        font-weight: bold;
+    }
+
+.cart .remove-btn:hover{
+    color: white;
+    background-color: black;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
 }
 
 .cart .edit-btn{
-    color: #000;
+    color: white;
     text-decoration: none;
-    font-size: 15px;
-    background-color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 5px;
     border: none;
+    transition: 0.4s ease-in-out;
+}
+
+.cart .edit-btn:hover{
+    color: white;
+    background-color: black;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
 }
 
 .cart .product-info p{
@@ -364,6 +391,8 @@ footer .copyright img{
 .cart-total{
     display: flex;
     justify-content: flex-end;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .cart-total table{
@@ -388,6 +417,16 @@ th:last-child{
 .checkout-btn{
     background-color: #000;
     color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.checkout-btn:hover{
+    color: white;
+    background-color: black;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
 }
 
 /* Login */
@@ -480,6 +519,20 @@ th:last-child{
 .orders .product-info{
     display: flex;
     flex-wrap: wrap;
+}
+
+.product-info p{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.product-price{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.p-name{
+    font-weight: bold;
 }
 
 .orders th{

@@ -190,7 +190,7 @@ if (isset($_POST['search'])) {
           <?php while ($row = $products->fetch_assoc()) { ?>
 
 
-            <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <div onclick="window.location.href='single_product.php';" class="product text-center col-lg-3 col-md-4 col-sm-12">
                 <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>" alt="">
                 <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
                 <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>

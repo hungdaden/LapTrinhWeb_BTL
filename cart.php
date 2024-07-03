@@ -204,14 +204,14 @@ function calculateTotalCart(){
                     <div class="product-info">
                         <img src="assets/imgs/<?php echo $value['product_image']; ?>" />
                         <div>
-                            <p><?php echo $value['product_name']; ?></p>
-                            <small><span>$</span><?php echo $value['product_price']; ?></small>
+                            <p id="price"><?php echo $value['product_name']; ?></p>
+                            <medium><span>$</span><?php echo $value['product_price']; ?></medium>
                             <br>
                             <form method="POST" action="cart.php">
 
                             <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
 
-                            <input type="submit" class="remove-btn" name="remove_product" value="remove"/>
+                            <input type="submit" class="remove-btn" name="remove_product" value="Remove"/>
                         
                             </form>
                             
@@ -226,14 +226,14 @@ function calculateTotalCart(){
                     
                     <input type="hidden" name="product_id" value="<?php echo $value['product_id'];?>"/>
                     <input type="number" name="product_quantity" value="<?php echo $value['product_quantity'];?>"/>
-                    <input type="submit" class="edit-btn" value="edit" name="edit_quantity"/>
+                    <input type="submit" class="edit-btn" value="Edit" name="edit_quantity"/>
                     
                     </form>
                     
                 </td>
 
                 <td>
-                    <span>$</span>
+                    <span class="product-price">$</span>
                     <span class="product-price"><?php echo $value['product_quantity'] * $value['product_price']; ?></span>
                 </td>
             </tr>

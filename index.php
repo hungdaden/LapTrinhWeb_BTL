@@ -26,7 +26,7 @@
               </li>
               
               <li class="nav-item">
-                <a class="nav-link" href="shop.html">Shop</a>
+                <a class="nav-link" href="shop.php">Shop</a>
               </li>
 
               <li class="nav-item">
@@ -34,7 +34,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="contact.hmtl">Contact</a>
               </li>
 
               <li class="nav-item">
@@ -79,7 +79,7 @@
                 <img class="img-fluid" src="assets/imgs/1.jpeg" alt="">
                 <div class="details text-center">
                     <h2>Balo dep vcl</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <button class="new-btn text-uppercase">Shop Now</button>
                 </div>
             </div>
             <!--Cai thu 2-->
@@ -106,7 +106,7 @@
       <section id="feature" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
             <br>
-            <h3>Our Feature</h3>
+            <h2>Our Feature</h2>
             <hr class="mx-auto">
             <p style="font-size: 20px;">Cac san pham dinh cao</p>
         </div>
