@@ -180,6 +180,7 @@ button:hover{
     transform: translateY(50px);
     opacity: 0;
     transition: 0.3s all;
+    color: #fff;
 }
 
 .product:hover .buy-btn{
