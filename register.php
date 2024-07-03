@@ -1,3 +1,69 @@
+<?php
+
+session_start();
+
+include('server/connection.php');
+
+if(isset($_POST['register'])){
+
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $confirmPassword = $_POST['confirmPassword'];
+
+  // check confirmpassword co giong password hay khong
+  if($password !== $confirmPassword){
+    header('location: register.php?error=passwords dont match');
+  }
+
+  // check password co ngan hon 6 ki tu hay khong
+  else if(strlen($password) < 6){
+    header('location: register.php?error=Passwords must be at least 6 characters');
+  }
+  // Neu khong co loi gi
+  else{
+  // check xem email da ton tai chua
+  $statement1 = $conn->prepare("SELECT count(*) FROM users WHERE user_email = ?");
+  $statement1->bind_param('s', $email);
+  $statement1->execute();
+  $statement1->bind_result($num_rows);
+  $statement1->store_result();
+  $statement1->fetch();
+
+  // neu email da ton tai thi bo qua va bao loi
+  if($num_rows != 0){
+    header('location: register.php?error=Da ton tai nguoi dung su dung email nay');
+  }
+  // neu chua ton tai email nay
+  else{
+  // tao user moi
+  $statement = $conn->prepare("INSERT INTO users (user_name, user_email, user_password)
+                              VALUES (?,?,?)");
+
+  $statement->bind_param('sss', $name, $email, md5($password));
+
+  // neu tao user moi thanh cong thi dang nhap va chuyen den trang account
+  if($statement1->execute()){
+    $_SESSION['user_email'] = $email;
+    $_SESSION['user_name'] = $name;
+    $_SESSION['logged_in'] = true;
+    header('location: account.php?register=You are register successfully');
+    }else{
+      // neu tao tai khoan khong thanh cong
+      header('location: register.php?error= Could not create an account');
+    }
+  }
+}
+// Neu da dang ki, chuyen thang den accout
+}else if(isset($_SESSION['logged_in'])){
+
+  header('location: account.php');
+  exit;
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +126,8 @@
             <hr class="mx-auto">
         </div>
         <div class="mx-auto container">
-            <form id="register-form">
+            <form id="register-form" method="POST" action="register.php">
+              <p style="color: red;"><?php if(isset($_GET['error'])) {echo $_GET['error'];}?></p>
                 <div class="form-group">
                     <label>Name</label>
                     <input type="text" class="form-control" id="register-name" name="name" placeholder="Name" required/>
@@ -78,10 +145,10 @@
                     <input type="password" class="form-control" id="register-confirm-password" name="confirmPassword" placeholder="ConfirmPassword" required/>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn" id="register-btn" value="Register"/>
+                    <input type="submit" class="btn" id="register-btn" name="register" value="Register"/>
                 </div>
                 <div class="form-group">
-                    <a id="login-url" class="btn">Do you have an account? Login</a>
+                    <a id="login-url" href="login.php" class="btn">Do you have an account? Login</a>
                 </div>
             </form>
         </div>

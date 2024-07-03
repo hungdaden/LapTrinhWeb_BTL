@@ -416,7 +416,7 @@ th:last-child{
 
 .checkout-btn{
     background-color: #000;
-    color: #fff;
+    color: white;
     border-radius: 5px;
     font-weight: bold;
     transition: 0.4s ease-in-out;
@@ -470,6 +470,12 @@ th:last-child{
 #register-form #register-btn{
     background-color: #000;
     color: #fff;
+    transition: 0.4s ease-in-out;
+}
+
+#register-form #register-btn:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
 }
 
 #register-form #login-url{
