@@ -29,7 +29,7 @@ if(isset($_POST['login_btn'])){
 
       header('location: account.php?login_success=Logged in successfully');
     }else{
-      header('location: account.php?error=Login Failed');
+      header('location: login.php?error=Login Failed');
     }
 
   }else{

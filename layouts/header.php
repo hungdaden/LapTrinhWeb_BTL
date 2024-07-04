@@ -39,7 +39,7 @@
 
               <li class="nav-item">
                 <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
-                <a href="account.html"><i class="fa fa-user"></i></a>
+                <a href="login.php"><i class="fa fa-user"></i></a>
               </li>
 
             </ul>
@@ -47,93 +47,3 @@
           </div>
         </div>
       </nav>
-
-      <!--Tu cho nay la Home-->
-
-      <section id="home">
-        <div class="container">
-            <h5>NEW ARRIVALS</h5>
-            <h1><span>Best Prices </span>This Summer.</h1>
-            <p>Best offers for the best products</p>
-            <button>Shop Now</button>
-        </div>
-      </section>
-
-      <!--Brand-->
-
-      <section id="brand" class="container">
-        <div class="row m-0">
-            <img src="assets/imgs/brand1.jpeg" alt="" class="img-fluid col-lg-3 col-md-6 col-sm-12">
-            <img src="assets/imgs/brand2.jpeg" alt="" class="img-fluid col-lg-3 col-md-6 col-sm-12">
-            <img src="assets/imgs/brand3.jpeg" alt="" class="img-fluid col-lg-3 col-md-6 col-sm-12">
-            <img src="assets/imgs/brand4.jpeg" alt="" class="img-fluid col-lg-3 col-md-6 col-sm-12">
-        </div>
-      </section>
-
-      <!--New-->
-
-      <section id="new" class="w-100 ">
-        <div class="row p-0 m-0">
-            <!--Cai dau tien-->
-            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/1.jpeg" alt="">
-                <div class="details text-center">
-                    <h2>Balo dep vcl</h2>
-                    <button class="new-btn text-uppercase">Shop Now</button>
-                </div>
-            </div>
-            <!--Cai thu 2-->
-            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/2.jpeg" alt="">
-                <div class="details text-center">
-                    <h2>Ao dep vcl</h2>
-                    <button class="text-uppercase">Shop Now</button>
-                </div>
-            </div>
-            <!--Cai thu 3-->
-            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/3.jpeg" alt="">
-                <div class="details text-center">
-                    <h2>Quan dep vcl</h2>
-                    <button class="text-uppercase">Shop Now</button>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      <!--Feature-->
-
-      <section id="feature" class="my-5 pb-5">
-        <div class="container text-center mt-5 py-5">
-            <br>
-            <h2>Our Feature</h2>
-            <hr class="mx-auto">
-            <p style="font-size: 20px;">Cac san pham dinh cao</p>
-        </div>
-        <div class="row mx-auto container-fluid">
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured1.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured2.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured3.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-        </div>
-    </section>
