@@ -46,6 +46,23 @@ if(isset($_POST['change_password'])){
   }
 }
 
+
+
+// get orders
+if (isset($_SESSION['logged_in'])) {
+
+  $user_id = $_SESSION['user_id'];
+
+  $stmt = $conn->prepare("SELECT * FROM orders WHERE user_id =? ");
+
+  $stmt->bind_param('i',$user_id);
+
+  $stmt->execute();
+
+  $bag_products = $stmt->get_result();
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -115,24 +132,48 @@ if(isset($_POST['change_password'])){
 
       <table class="mt-5 pt-5">
           <tr>
-              <th>Product</th>
-              <th>Date</th>
+              <th>Order id</th>
+              <th>Order cost</th>
+              <th>Order status</th>
+              <th>Order Date</th>
+              <th>Order details</th>
           </tr>
 
           <!--product 1-->
+
+          <?php while ($row = $orders->fetch_assoc()) { ?>
           <tr>
-              <td>
+              <!--<td>
                 <div class="product-info">
-                  <img src="assets/imgs/featured1.jpeg" alt="">
-                  <p class="mt-3">Brown Hoodie</p>
+                   <img src="assets/imgs/featured1.jpeg" alt=""> 
+                  <p class="mt-3"><?php echo $row['order_id']; ?></p>
                 </div>  
+              </td> -->
+
+                <span><?php echo $row['order_id']; ?></span>
+              <td>
+                <span><?php echo $row['order_cost']; ?></span>
               </td>
 
               <td>
-                <span>June 28 2024</span>
+                <span><?php echo $row['order_status']; ?></span>
+              </td>
+              
+              <td>
+                <span><?php echo $row['order_date']; ?></span>
+              </td>
+
+              <td>
+                <form method="POST" action="order_details.php">
+                  <input type="hidden" value="<?php echo $row['order_status']; ?>" name="order_status"/>
+                  <input type="hidden" value="<?php echo $row['order_id']; ?>" name="order_id" />
+                  <input type="submit" class="btn order-details-btn" value="details" name="order_details_btn"/>
+                </form>
               </td>
 
           </tr>
+
+          <?php } ?>
           
       </table>
 

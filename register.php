@@ -49,6 +49,8 @@ if(isset($_POST['register'])){
 
   // neu tao user moi thanh cong thi dang nhap va chuyen den trang account
   if($stmt->execute()){
+    $user_id = $stmt->$insert_id;
+    $_SESSION['user_id'] = $user_id;
     $_SESSION['user_email'] = $email;
     $_SESSION['user_name'] = $name;
     $_SESSION['logged_in'] = true;
