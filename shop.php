@@ -70,41 +70,7 @@ if (isset($_POST['search'])) {
 </head>
 <body>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
-        <div class="container">
-          <img style="height: 25px;" style="width: 50px;" src="//theme.hstatic.net/1000306633/1001194548/14/logo.png?v=206" alt="">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link" href="shop.html">Shop</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-
-              <li class="nav-item">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa fa-user"></i>
-              </li>
-
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
+<?php include('layouts/header.php'); ?>
       
       <!--Search-->
       <section id="search" class="my-5 py-5 ms-2">
