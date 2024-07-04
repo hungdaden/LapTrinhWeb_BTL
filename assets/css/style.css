@@ -508,11 +508,26 @@ th:last-child{
     transition: 0.3s ease-in-out;
 }
 
-#account-info #orders-btn,#logout-btn{
+#logout-btn{
     color: black;
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
+}
+
+#logout-btn:hover{
+    color: gray;
+}
+
+#orders-btn{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#orders-btn:hover{
+    color: gray;
 }
 
 /* Orders */

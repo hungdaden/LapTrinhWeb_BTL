@@ -3,7 +3,6 @@
 include('server/connection.php');
 
 
-
 if (isset($_POST['search'])) {
 
   $category = $_POST['category'];

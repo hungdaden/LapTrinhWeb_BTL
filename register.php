@@ -4,6 +4,11 @@ session_start();
 
 include('server/connection.php');
 
+if(isset($_SESSION['logged_in'])){
+  header('location: account.php');
+  exit;
+}
+
 if(isset($_POST['register'])){
 
   $name = $_POST['name'];
@@ -13,7 +18,7 @@ if(isset($_POST['register'])){
 
   // check confirmpassword co giong password hay khong
   if($password !== $confirmPassword){
-    header('location: register.php?error=passwords dont match');
+    header('location: register.php?error=Passwords dont match');
   }
 
   // check password co ngan hon 6 ki tu hay khong
@@ -23,43 +28,37 @@ if(isset($_POST['register'])){
   // Neu khong co loi gi
   else{
   // check xem email da ton tai chua
-  $statement1 = $conn->prepare("SELECT count(*) FROM users WHERE user_email = ?");
-  $statement1->bind_param('s', $email);
-  $statement1->execute();
-  $statement1->bind_result($num_rows);
-  $statement1->store_result();
-  $statement1->fetch();
+  $stmt1 = $conn->prepare("SELECT count(*) FROM users WHERE user_email = ?");
+  $stmt1->bind_param('s', $email);
+  $stmt1->execute();
+  $stmt1->bind_result($num_rows);
+  $stmt1->store_result();
+  $stmt1->fetch();
 
   // neu email da ton tai thi bo qua va bao loi
   if($num_rows != 0){
-    header('location: register.php?error=Da ton tai nguoi dung su dung email nay');
+    header('location: register.php?error=This email is already registered');
   }
   // neu chua ton tai email nay
   else{
   // tao user moi
-  $statement = $conn->prepare("INSERT INTO users (user_name, user_email, user_password)
+  $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password)
                               VALUES (?,?,?)");
 
-  $statement->bind_param('sss', $name, $email, md5($password));
+  $stmt->bind_param('sss', $name, $email, md5($password));
 
   // neu tao user moi thanh cong thi dang nhap va chuyen den trang account
-  if($statement1->execute()){
+  if($stmt->execute()){
     $_SESSION['user_email'] = $email;
     $_SESSION['user_name'] = $name;
     $_SESSION['logged_in'] = true;
-    header('location: account.php?register=You are register successfully');
+    header('location: account.php?register_success=You are registed successfully');
     }else{
       // neu tao tai khoan khong thanh cong
       header('location: register.php?error= Could not create an account');
     }
   }
 }
-// Neu da dang ki, chuyen thang den accout
-}else if(isset($_SESSION['logged_in'])){
-
-  header('location: account.php');
-  exit;
-
 }
 
 ?>
