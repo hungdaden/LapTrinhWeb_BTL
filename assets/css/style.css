@@ -349,9 +349,14 @@ footer .copyright img{
     background-color: black;
     border: none;
     border-radius: 5px;
-    width: 100%;
+    width: 100px;
     font-weight: bold;
     transition: 0.4s ease-in-out;
+}
+
+.cart-total-css{
+    font-size: 32px;
+    font-weight: bold;
 }
 
     medium{

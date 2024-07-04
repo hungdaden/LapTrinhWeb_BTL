@@ -200,8 +200,8 @@ function calculateTotalCart(){
             <table>
 
                 <tr>
-                    <td>Total</td>
-                    <td>$ <?php echo $_SESSION['total']; ?></td>
+                    <td class="cart-total-css">Total</td>
+                    <td class="cart-total-css">$ <?php echo $_SESSION['total']; ?></td>
                 </tr>
             </table>
         </div>
