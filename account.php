@@ -1,3 +1,58 @@
+<?php
+session_start();
+include ('server/connection.php');
+
+// bat cai nay len thi loi nen tat di :)))
+// if(isset($_SESSION['logged_in'])){
+//   header('location: login.php');
+//   exit;
+// }
+
+
+
+if(isset($_GET['logout'])){
+  if(isset($_SESSION['logged_in'])){
+    unset($_SESSION['logged_in']);
+    unset($_SESSION['user_email']);
+    unset($_SESSION['user_name']);
+    header('location: login.php');
+    exit;
+  }
+}
+
+if(isset($_POST['change_password'])){
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirmPassword'];
+    $user_email = $_SESSION['user_email'];
+    // check confirmpassword co giong password hay khong
+  if($password !== $confirm_password){
+    header('location: account.php?error=Passwords dont match');
+  }
+
+  // check password co ngan hon 6 ki tu hay khong
+  else if(strlen($password) < 6){
+    header('location: account.php?error=Passwords must be at least 6 characters');
+  }else{
+    // neu khong co loi
+    $stmt = $conn->prepare("UPDATE users SET user_password = ? WHERE user_email = ?");
+    $stmt->bind_param('ss', md5($password), $user_email);
+    
+    if($stmt->execute()){
+      header('location: account.php?message=Password has been updated successfully');
+    }else{
+      header('location: account.php?message=Password has been updated unsuccessfully');
+    }
+
+  }
+}
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,18 +112,22 @@
     <section class="my-5 py-5">
         <div class="row container mx-auto">
             <div class="text-center mt-3 pt-5 col-lg col-md-12 col-sm-12">
+            <p class="text-center" style="color:green"><?php if(isset($_GET['register_success'])){ echo $_GET['register_sucess'];} ?></p>
+            <p class="text-center" style="color:green"><?php if(isset($_GET['login_success'])){ echo $_GET['login_success'];} ?></p>
                 <h3 class="font-weight-bold">Account info</h3>
                 <hr class="mx-auto">
                 <div class="account-info">
-                    <p>Name:<span> Hung</span></p>
-                    <p>Email:<span> hunghoang123@gmail.com</span></p>
-                    <p><a style="text-decoration: none;" href="" id="orders-btn">Your orders</a></p>
-                    <p><a href="" id="logout-btn">Logout</a></p>
+                    <p>Name:<span> <?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name']; } ?></span></p>
+                    <p>Email:<span> <?php if(isset($_SESSION['user_email'])){ echo $_SESSION['user_email']; } ?></span></p>
+                    <p><a href="#orders" id="orders-btn">Your orders</a></p>
+                    <p><a href="account.php?logout=1" id="logout-btn">Logout</a></p>
                 </div>
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12">
-                <form id="account-form">
+                <form id="account-form" method="POST" action="account.php">
+                  <p class="text-center" style="color:red"><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></p>
+                  <p class="text-center" style="color:green"><?php if(isset($_GET['message'])){ echo $_GET['message'];} ?></p>
                     <h3>Change Password</h3>
                     <hr class="mx-auto">
                     <div class="form-group">
@@ -80,7 +139,7 @@
                         <input type="password" class="form-control" id="account-password-confirm" name="confirmPassword" placeholder="Confirm Password" required/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Change Password" class="btn" id="change-pass-btn">
+                        <input type="submit" value="Change Password" name="change_password" class="btn" id="change-pass-btn">
                     </div>
                 </form>
             </div>
@@ -90,7 +149,7 @@
 
 
     <!--Orders-->
-    <section class="orders container my-5 py-5">
+    <section id="orders" class="orders container my-5 py-5">
       <div class="container mt-2">
           <h2 class="font-weight-bold text-center">Your Orders</h2>
           <hr class="mx-auto">
@@ -125,70 +184,4 @@
 
 
 
-    <!--footre-->
-
-    <footer class="mt-5 py-5">
-        <div class="row container mx-auto pt-5">
-          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-            <img class="logo" src="https://theme.hstatic.net/1000306633/1001194548/14/logo.png?v=206" />
-            <p class="pt-3">We provide the best products for the most affordable pricess</p>
-
-          </div>
-          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-            <h5 class="pb-2">Featured</h5>
-            <ul class="text-uppercase">
-              <li><a href="#">men</a></li>
-              <li><a href="#">women</a></li>
-              <li><a href="#">boys</a></li>
-              <li><a href="#">girls</a></li>
-              <li><a href="#">new arrivals</a></li>
-              <li><a href="#">clothes</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-              <h5 class="pb-2">Contact Us</h5>
-              <div>
-                <h6 class="text-uppercase">Adress</h6>
-                <p>Trieu Khuc, Thanh Xuan, Ha Noi</p>
-              </div>
-          
-              <div>
-                <h6 class="text-uppercase">Phone</h6>
-                <p>1900 10 0 biet</p>
-              </div>
-              <div>
-                <h6 class="text-uppercase">Email</h6>
-                <p>info@email.com</p>
-              </div>
-          </div>
-
-          
-          </div>
-        </div>
-
-
-
-        <div class="copyright mt-5">
-          <div class="row container mx-auto">
-            <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
-              <img style="height: 100px;" style="width: 150px;" src="assets/imgs/payment.jpg" />
-            </div>
-            <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
-              <p>Group 4 @ 2024 All Right Reserved</p>
-            </div>
-            <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-        </div>
-
-      </footer>
-
-
-
-    <script src="https://kit.fontawesome.com/2f3e6ad59f.js" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php include('layouts/footer.php'); ?>
