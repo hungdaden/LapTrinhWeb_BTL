@@ -50,7 +50,7 @@ session_start();
                 <a href="cart.php">
                   <i class="fa fa-shopping-cart">
                   <?php if(isset($_SESSION['quantity']) && $_SESSION['quantity'] != 0){ ?>
-                      <span><?php echo $_SESSION['quantity']; ?></span>
+                      <span class="cart-quantity"><?php echo $_SESSION['quantity']; ?></span>
 
                   <?php } ?>
                   </i>
