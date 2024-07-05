@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!empty($_SESSION['cart']) && isset($_POST['checkout'])) {
+if (!empty($_SESSION['cart']) ) {
   // let user in
 
 
@@ -50,7 +50,20 @@ if (!empty($_SESSION['cart']) && isset($_POST['checkout'])) {
             <hr class="mx-auto">
         </div>
         <div class="mx-auto container">
+            <p class="text-center" style="color: black;"><?php if(isset($_GET['message'])){ echo $_GET['message'];} ?>
+                    <?php if(isset($_GET['message'])){ ?>
+
+
+                        <a class="btn btn-primary" href="login.php">Login</a>
+
+
+
+
+                    <?php } ?>
+        
+            </p>
             <form id="checkout-form" method="POST" action="place_order.php">
+        
                 <div class="form-group checkout-small-element">
                     <label>Name</label>
                     <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Name" required/>

@@ -44,8 +44,12 @@ session_start();
             <p>Total payment: $ <?php if (isset($_SESSION['total'])) {
                 echo $_SESSION['total'];
             }  ?></p>
-            <?php if (isset($_SESSION['total'])) { ?>
+            <?php if (isset($_SESSION['total']) && $_SESSION['total'] != 0) { ?>
             <input type="submit" class="btn btn-primary" value="Pay Now">
+            <?php } else{ ?>
+
+                <p>You don't have an order</p>
+
             <?php } ?>
 
             <?php if (isset($_GET['order_status']) && $_GET['order_status'] == "not paid") { ?>
