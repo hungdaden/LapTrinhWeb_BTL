@@ -42,7 +42,7 @@ if (!empty($_SESSION['cart']) ) {
         </div>
         <div class="mx-auto container">
             
-            <form id="checkout-form" method="POST" action="payment.php">
+            <form id="checkout-form" method="POST" action="server/place_order.php">
 
                 <div class="form-group checkout-small-element">
                     <label>Name</label>

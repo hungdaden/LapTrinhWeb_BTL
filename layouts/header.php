@@ -43,7 +43,7 @@ session_start();
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="contact.hmtl">Contact</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
 
               <li class="nav-item">

@@ -564,7 +564,10 @@ th:last-child{
     padding: 5px 10px;
     color: white;
     background-color: black;
+}
 
+.order th:nth-child(2){
+    /* text-align: right; */
 }
 
 
@@ -577,6 +580,20 @@ th:last-child{
     width: 80px;
     height: 80px;
     margin-right: 10px;
+}
+
+.orders .order-details-btn{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    width: 50%;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.orders .order-details-btn:hover{
+    transform: scale(1.1);
+    transition: 0.4s ease-in-out;
 }
 
 /* Check out */
