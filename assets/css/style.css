@@ -567,7 +567,10 @@ th:last-child{
 
 }
 
-
+.orders .order-details-btn{
+    color: #fff;
+    background-color: #000;
+}
 
 .orders td{
     padding: 10px 20px;

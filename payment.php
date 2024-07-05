@@ -62,11 +62,7 @@ if (isset($_POST['order_pay_btn'])) {
                 <p>You don't have an order</p>
 
             <?php } ?>
-
-
             
-            
-
 
         </div>
     </section>
