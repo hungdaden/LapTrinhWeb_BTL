@@ -1,3 +1,12 @@
+<?php 
+
+
+session_start();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +47,14 @@
               </li>
 
               <li class="nav-item">
-                <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
+                <a href="cart.php">
+                  <i class="fa fa-shopping-cart">
+                  <?php if(isset($_SESSION['quantity']) $$ $_SESSION['quantity'] != 0){ ?>
+                      <span><?php echo $_SESSION['quantity']; ?></span>
+
+                  <?php } ?>
+                  </i>
+                </a>
                 <a href="login.php"><i class="fa fa-user"></i></a>
               </li>
 
