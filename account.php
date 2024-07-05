@@ -162,7 +162,6 @@ if (isset($_SESSION['logged_in'])) {
               <td>
                 <span><?php echo $row['order_date']; ?></span>
               </td>
-
               <td>
                 <form method="POST" action="order_details.php">
                   <input type="hidden" value="<?php echo $row ['order_status']; ?>" name="order_status"/>

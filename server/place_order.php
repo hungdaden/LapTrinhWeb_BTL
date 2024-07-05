@@ -38,6 +38,8 @@ if (!isset($_SESSION['logged_in'])) {
 
                 $order_id = $stmt->insert_id;
 
+                echo $order_id;
+
                 
 
                 
@@ -56,8 +58,6 @@ if (!isset($_SESSION['logged_in'])) {
                     $stmt1->bind_param('iissiiis',$order_id,$product_id,$product_name,$product_image,$product_price,$product_quantity,$user_id,$order_date);
 
                     $stmt1->execute();
-
-                    
 
                 }
 

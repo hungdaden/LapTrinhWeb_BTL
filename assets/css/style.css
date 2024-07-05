@@ -570,7 +570,14 @@ th:last-child{
     /* text-align: right; */
 }
 
+.order th:nth-child(2){
+    /* text-align: right; */
+}
 
+.orders .order-details-btn{
+    color: #fff;
+    background-color: #000;
+}
 
 .orders td{
     padding: 10px 20px;
