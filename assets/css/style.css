@@ -564,7 +564,11 @@ th:last-child{
     padding: 5px 10px;
     color: white;
     background-color: black;
+    /* text-align: left; */
+}
 
+.order th:nth-child(2){
+    /* text-align: right; */
 }
 
 .orders .order-details-btn{

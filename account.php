@@ -143,12 +143,12 @@ if (isset($_SESSION['logged_in'])) {
 
           <?php while ($row = $orders->fetch_assoc()) { ?>
           <tr>
-              <td>
-              <!--  <div class="product-info">
+             <!-- <td>
+                <div class="product-info">
                    <img src="assets/imgs/featured1.jpeg" alt=""> 
                   <p class="mt-3"><?php echo $row['order_id']; ?></p>
-                </div>  -->
-              </td> 
+                </div> 
+              </td>  -->
               <td>
                 <span><?php echo $row['order_id']; ?></span>
               </td>

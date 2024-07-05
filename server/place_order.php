@@ -38,6 +38,8 @@ if (!isset($_SESSION['logged_in'])) {
 
                 $order_id = $stmt->insert_id;
 
+                echo $order_id;
+
                 
 
                 
