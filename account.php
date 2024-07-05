@@ -59,7 +59,7 @@ if (isset($_SESSION['logged_in'])) {
 
   $stmt->execute();
 
-  $bag_products = $stmt->get_result();
+  $orders = $stmt->get_result();
 
 }
 
@@ -124,7 +124,7 @@ if (isset($_SESSION['logged_in'])) {
 
 
     <!--Orders-->
-    <section id="orders" class="orders container my-5 py-5">
+    <section id="orders" class="orders container my-5 py-3">
       <div class="container mt-2">
           <h2 class="font-weight-bold text-center">Your Orders</h2>
           <hr class="mx-auto">
@@ -149,8 +149,10 @@ if (isset($_SESSION['logged_in'])) {
                   <p class="mt-3"><?php echo $row['order_id']; ?></p>
                 </div>  
               </td> -->
-
+              <td>
                 <span><?php echo $row['order_id']; ?></span>
+              </td>
+              
               <td>
                 <span><?php echo $row['order_cost']; ?></span>
               </td>
@@ -164,10 +166,8 @@ if (isset($_SESSION['logged_in'])) {
               </td>
 
               <td>
-                <form method="POST" action="order_details.php">
-                  <input type="hidden" value="<?php echo $row['order_status']; ?>" name="order_status"/>
-                  <input type="hidden" value="<?php echo $row['order_id']; ?>" name="order_id" />
-                  <input type="submit" class="btn order-details-btn" value="details" name="order_details_btn"/>
+                <form>
+                  <input type="submit" class="btn" value="details"/>
                 </form>
               </td>
 
