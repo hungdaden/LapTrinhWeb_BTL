@@ -65,7 +65,7 @@ if (!isset($_SESSION['logged_in'])) {
 
                 ///unset($_SESSION['cart']);
 
-                header('location: ../payment.php?order_status= order placed successfully');
+                header('location: ../payment.php?order_status=order placed successfully');
 
 }
 

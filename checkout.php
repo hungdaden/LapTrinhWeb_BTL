@@ -42,13 +42,7 @@ if (!empty($_SESSION['cart']) ) {
         </div>
         <div class="mx-auto container">
             
-            <form id="checkout-form" method="POST" action="payment.php">
-                <p class="text-center" style="color: red">
-                    <?php if(isset($_GET['message'])){ echo $_GET['message'];} ?>
-                    <?php if(isset($_GET['message'])) { ?>
-                            <a href="login.php" class="btn btn-primary">Login</a>
-
-                        <?php } ?>
+            <form id="checkout-form" method="POST" action="server/place_order.php">
                 </p>
                 <div class="form-group checkout-small-element">
                     <label>Name</label>
