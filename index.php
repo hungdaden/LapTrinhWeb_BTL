@@ -7,7 +7,9 @@
             <h5>NEW ARRIVALS</h5>
             <h1><span>Best Prices </span>This Summer.</h1>
             <p>Best offers for the best products</p>
-            <button>Shop Now</button>
+            <form action="shop.php">
+                <button>Shop Now</button>
+            </form>
         </div>
       </section>
 
@@ -31,7 +33,9 @@
                 <img class="img-fluid" src="assets/imgs/1.jpeg" alt="">
                 <div class="details text-center">
                     <h2>Balo dep vcl</h2>
-                    <button class="new-btn text-uppercase">Shop Now</button>
+                    <form action="shop.php">
+                        <button class="new-btn text-uppercase">Shop Now</button>
+                    </form>
                 </div>
             </div>
             <!--Cai thu 2-->
@@ -39,7 +43,9 @@
                 <img class="img-fluid" src="assets/imgs/2.jpeg" alt="">
                 <div class="details text-center">
                     <h2>Ao dep vcl</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <form action="shop.php">
+                        <button class="text-uppercase">Shop Now</button>
+                    </form>
                 </div>
             </div>
             <!--Cai thu 3-->
@@ -47,48 +53,60 @@
                 <img class="img-fluid" src="assets/imgs/3.jpeg" alt="">
                 <div class="details text-center">
                     <h2>Quan dep vcl</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <form action="shop.php">
+                        <button class="text-uppercase">Shop Now</button>
+                    </form>   
                 </div>
             </div>
         </div>
       </section>
 
-      <!--Feature-->
 
-      <section id="feature" class="my-5 pb-5">
-        <div class="container text-center mt-5 py-5">
-            <br>
-            <h2>Our Feature</h2>
-            <hr class="mx-auto">
-            <p style="font-size: 20px;">Cac san pham dinh cao</p>
-        </div>
-        <div class="row mx-auto container-fluid">
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured1.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured2.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured3.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-            <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
-                <h5 class="p-name">Hut Di</h5>
-                <h4 class="p-price">$200</h4>
-                <button class="buy-btn">Buy Now</button>
-            </div>
-        </div>
-    </section>
+
+        <!-- Feature -->
+        <section id="feature" class="my-5 pb=5">
+      <div class="container text-center mt-5 py-5">
+          <br>
+          <h3>Cac mat hang dinh cao</h3>
+          <hr class="mx-auto">
+          <p style="font-size: 20px;">Dinh cao</p>
+      </div>
+      <div class="row mx-auto container-fluid">
+      <?php include('server/get_featured_products.php'); ?>
+      <?php while ($row= $featured_products->fetch_assoc()) { ?>
+          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+              <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image'] ?>" alt="">
+              <h5 class="p-name"><?php echo $row['product_name'] ?></h5>
+              <h4 class="p-price"><?php echo $row['product_price'] ?></h4>
+              <a href=" <?php echo "single_product.php?product_id=", $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
+          </div>
+          <?php } ?>
+      </div>
+  </section> 
+
+
+
+      <!--Jean-->
+
+      <section id="feature" class="my-5 pb=5">
+      <div class="container text-center mt-5 py-5">
+          <br>
+          <h3>Quan</h3>
+          <hr class="mx-auto">
+          <p style="font-size: 20px;">Quan dinh cao</p>
+      </div>
+      <div class="row mx-auto container-fluid">
+      <?php include('server/get_jeans.php'); ?>
+      <?php while ($row= $jean_products->fetch_assoc()) { ?>
+          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+              <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image'] ?>" alt="">
+              <h5 class="p-name"><?php echo $row['product_name'] ?></h5>
+              <h4 class="p-price"><?php echo $row['product_price'] ?></h4>
+              <a href=" <?php echo "single_product.php?product_id=", $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
+          </div>
+          <?php } ?>
+      </div>
+  </section>
 
     <!--Banner-->
 
@@ -96,28 +114,28 @@
       <div class="container">
         <h4>Summer Time's Sale</h4>
         <h1>Bo suu tap mua he <br> Up to 50% OFF</h1>
-        <button class="text-uppercase">Shop Now</button>
+        <form action="shop.php">
+            <button class="text-uppercase">Shop Now</button>
+        </form>
       </div>
     </section>
 
-    <!--Feature/Clothes-->
+    <!--Coat-->
 
     <section id="feature" class="my-5">
       <div class="container text-center mt-5 py-5">
           <br>
-          <h3>Quan ao gi do</h3>
+          <h3>Ao</h3>
           <hr class="mx-auto">
-          <p style="font-size: 20px;">quan ao dang cap</p>
+          <p style="font-size: 20px;">Ao dang cap</p>
       </div>
       <div class="row mx-auto container-fluid">
 
       <?php 
-      include('<server/get_featured_products.php');
-
-
+      include('server/get_coats.php');
        ?>
 
-      <?php while ($row= $featured_products->fetch_assoc()) { ?>
+      <?php while ($row= $coat_products->fetch_assoc()) { ?>
 
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
               <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image'] ?>" alt="">
@@ -147,7 +165,7 @@
               <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image'] ?>" alt="">
               <h5 class="p-name"><?php echo $row['product_name'] ?></h5>
               <h4 class="p-price"><?php echo $row['product_price'] ?></h4>
-              <button class="buy-btn">Buy Now</button>
+              <a href=" <?php echo "single_product.php?product_id=", $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
           </div>
           <?php } ?>
       </div>
