@@ -7,7 +7,9 @@
             <h5>NEW ARRIVALS</h5>
             <h1><span>Best Prices </span>This Summer.</h1>
             <p>Best offers for the best products</p>
-            <button>Shop Now</button>
+            <form action="shop.php">
+                <button>Shop Now</button>
+            </form>
         </div>
       </section>
 
@@ -31,7 +33,9 @@
                 <img class="img-fluid" src="assets/imgs/1.jpeg" alt="">
                 <div class="details text-center">
                     <h2>Balo dep vcl</h2>
-                    <button class="new-btn text-uppercase">Shop Now</button>
+                    <form action="shop.php">
+                        <button class="new-btn text-uppercase">Shop Now</button>
+                    </form>
                 </div>
             </div>
             <!--Cai thu 2-->
@@ -39,7 +43,9 @@
                 <img class="img-fluid" src="assets/imgs/2.jpeg" alt="">
                 <div class="details text-center">
                     <h2>Ao dep vcl</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <form action="shop.php">
+                        <button class="text-uppercase">Shop Now</button>
+                    </form>
                 </div>
             </div>
             <!--Cai thu 3-->
@@ -47,7 +53,9 @@
                 <img class="img-fluid" src="assets/imgs/3.jpeg" alt="">
                 <div class="details text-center">
                     <h2>Quan dep vcl</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <form action="shop.php">
+                        <button class="text-uppercase">Shop Now</button>
+                    </form>   
                 </div>
             </div>
         </div>
@@ -106,7 +114,9 @@
       <div class="container">
         <h4>Summer Time's Sale</h4>
         <h1>Bo suu tap mua he <br> Up to 50% OFF</h1>
-        <button class="text-uppercase">Shop Now</button>
+        <form action="shop.php">
+            <button class="text-uppercase">Shop Now</button>
+        </form>
       </div>
     </section>
 
