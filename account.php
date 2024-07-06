@@ -2,11 +2,11 @@
 session_start();
 include ('server/connection.php');
 
-// bat cai nay len thi loi nen tat di :)))
-// if(isset($_SESSION['logged_in'])){
-//   header('location: login.php');
-//   exit;
-// }
+// da fix duoc hehehehe
+if(!isset($_SESSION['logged_in'])){
+  header('location: login.php');
+  exit();
+}
 
 
 
