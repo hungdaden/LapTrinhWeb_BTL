@@ -92,7 +92,7 @@ if(isset($_GET['product_id'])){
                       name="category"
                     >
                       <option>Select category</option>
-                      <option value="Ao" selected>Ao</option>
+                      <option value="Ao">Ao</option>
                       <option value="Quan">Quan</option>
                       <option value="Balo">Balo</option>
                       <option value="Phu_kien">Phu Kien</option>
@@ -140,7 +140,7 @@ if(isset($_GET['product_id'])){
                   </div>
                   
               </div>
-              <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+              <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-6">
                 <div class="tm-product-img-edit mx-auto">
                   <img src="<?php echo "../assets/imgs/". $product['product_image']; ?>" style="width: 300px; height: 400px;" alt="Product image" class="img-fluid d-block mx-auto">
                   <i
