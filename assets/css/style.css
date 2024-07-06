@@ -660,3 +660,17 @@ th:last-child{
     transform: scale(1.1);
     transition: 0.4s ease-in-out;
   }
+
+  .paynow_btn2{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    transition: 0.4s ease-in-out;
+    width: 120px;
+    height: 30px;
+  }
+
+  .paynow_btn2:hover{
+    transform: scale(1.1);
+    transition: 0.4s ease-in-out;
+  }
