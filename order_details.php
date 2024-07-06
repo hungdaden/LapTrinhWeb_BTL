@@ -127,7 +127,7 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
       <?php if($order_status == "Not Paid"){ ?>
 
           <form style="float: right;">
-            <input type="submit" class="btn btn-primary" value="Pay Now">
+            <input type="submit" class="paynow_btn" value="Pay Now">
           </form>
 
         <?php } ?>

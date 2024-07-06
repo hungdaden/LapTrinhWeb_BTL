@@ -638,7 +638,7 @@ th:last-child{
     padding: 2px 5px;
     border-radius: 50%;
     margin: -5px;
-    font-size: irem;
+    font-size: 1rem;
 }
 
 #search{
@@ -646,4 +646,17 @@ th:last-child{
     left: 0;
     top: -100px;
     float: left;
+  }
+
+  .paynow_btn{
+    color: white;
+    background-color: black;
+    width: 140%;
+    border-radius: 5px;
+    transition: 0.4s ease-in-out;
+  }
+
+  .paynow_btn:hover{
+    transform: scale(1.1);
+    transition: 0.4s ease-in-out;
   }
