@@ -16,10 +16,6 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
     $stmt->execute();
 
     $order_details = $stmt->get_result();
-
-    $product_price = $_POST['product_price'];
-
-    $product_quantity = $_POST['product_quantity'];
 }else{
     header('location: account.php');
     exit;
@@ -44,7 +40,7 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
 <body>
 
 <!--Day la navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
         <div class="container">
           <img style="height: 25px;" style="width: 50px;" src="//theme.hstatic.net/1000306633/1001194548/14/logo.png?v=206" alt="">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,9 +109,7 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
                 </div>
                 
               </td>
-                  
-          
-          
+              
               <td>
                 <span>$<?php echo $row['product_price'];?></span>
               </td>
@@ -123,10 +117,10 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
               <td>
                 <span><?php echo $row['product_quantity'];?></span>
               </td>
-          <?php } ?> 
+
           </tr>
 
-
+          <?php } ?>
           
       </table>
 
