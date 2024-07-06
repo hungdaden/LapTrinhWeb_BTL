@@ -17,9 +17,7 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
 
     $order_details = $stmt->get_result();
 
-    $product_price = $_POST['product_price'];
 
-    $product_quantity = $_POST['product_quantity'];
 }else{
     header('location: payment.php');
     exit;
