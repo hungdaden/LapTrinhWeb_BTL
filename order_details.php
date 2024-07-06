@@ -21,7 +21,7 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
 
     $product_quantity = $_POST['product_quantity'];
 }else{
-    header('location: account.php');
+    header('location: payment.php');
     exit;
 }
 
