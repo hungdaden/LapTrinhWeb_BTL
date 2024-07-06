@@ -640,3 +640,10 @@ th:last-child{
     margin: -5px;
     font-size: irem;
 }
+
+#search{
+    position: fixed;
+    left: 0;
+    top: -100px;
+    float: left;
+  }
