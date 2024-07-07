@@ -155,13 +155,13 @@
   <section id="feature" class="my-5 pb=5">
       <div class="container text-center mt-5 py-5">
           <br>
-          <h3>Cac mat hang dinh cao</h3>
+          <h3>Phu kien</h3>
           <hr class="mx-auto">
-          <p style="font-size: 20px;">Dinh cao</p>
+          <p style="font-size: 20px;">Phu kien dinh cao</p>
       </div>
       <div class="row mx-auto container-fluid">
       <?php include('server/get_phu_kien.php'); ?>
-      <?php while ($row= $phu_kien_products->fetch_assoc()) { ?>
+      <?php while($row= $phu_kien_products->fetch_assoc()) { ?>
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
               <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image'] ?>" alt="">
               <h5 class="p-name"><?php echo $row['product_name'] ?></h5>

@@ -7,6 +7,6 @@ $stmt = $conn->prepare("SELECT * FROM products WHERE product_category = 'Phu_kie
 
 $stmt->execute();
 
-$phu_kien__products = $stmt->get_result();
+$phu_kien_products = $stmt->get_result();
 
 ?>

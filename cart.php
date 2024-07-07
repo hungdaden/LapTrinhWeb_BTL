@@ -150,6 +150,8 @@ function calculateTotalCart(){
 
             <!--product 1-->
 
+            <?php if(isset($_SESSION['cart'])){ ?>
+
             <?php foreach ($_SESSION['cart'] as $key => $value) { ?>
 
             <tr>
@@ -194,6 +196,9 @@ function calculateTotalCart(){
             
               <?php } ?>
 
+
+              <?php } ?>
+
             
         </table>
 
@@ -205,7 +210,9 @@ function calculateTotalCart(){
 
                 <tr>
                     <td class="cart-total-css">Total</td>
+                    <?php if(isset($_SESSION['cart'])){ ?>
                     <td class="cart-total-css">$<?php echo $_SESSION['total']; ?></td>
+                    <?php } ?>
                 </tr>
             </table>
         </div>

@@ -131,125 +131,128 @@ if (isset($_POST['search'])) {
 <body>
 
 <?php include('layouts/header.php'); ?>
-      
-      <!--Search-->
-      <section id="search" class="my-5 py-5 ms-2">
-        <div class="container mt-5 py-5">
-          <p>Search Products</p>
-          <hr>
+      <div class="container" style="display: flex; flex-direction: row">
+            <!--Search-->
+        <div class="sidebar" style="width: 10%; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1);">
+          <section id="search" class="my-5 py-5 ms-2">
+            <div class="container mt-5 py-5">
+              <p>Search Products</p>
+              <hr>
+            </div>
+
+                <form action="shop.php" method="POST">
+                  <div class="row mx-auto container">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+
+
+                      <p>Category</p>
+                        <div class="form-check">
+                          <input class="form-check-input" value="ao" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='Ao'){echo 'checked';} ?>>
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Ao
+                          </label>
+                        </div>
+
+                        <div class="form-check">
+                          <input class="form-check-input" value="quan" type="radio" name="category" id="category_two" <?php if(isset($category) && $category=='quan'){echo 'checked';} ?>>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            Quan
+                          </label>
+                        </div>
+
+                        <div class="form-check">
+                          <input class="form-check-input" value="balo" type="radio" name="category" id="category_two" <?php if(isset($category)&& $category=='Balo'){echo 'checked';} ?>>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            Balo
+                          </label>
+                        </div>
+
+                        <div class="form-check">
+                          <input class="form-check-input" value="phu_kien" type="radio" name="category" id="category_two" <?php if(isset($category)&& $category=='Phu_kien'){echo 'checked';} ?>>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            Phu kien
+                          </label>
+                        </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="row mx-auto container mt-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <p>Price</p>
+                        <input type="range" class="form-range w-50" name="price" value="<?php if(isset($price)) {echo $price;} else{echo "100";} ?>" min="1" max="1000" id="customRange2">
+                        <div class="w-50">
+                          <span style="float: left;">1</span>
+                          <span style="float: right;">1000</span>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group my-3 mx-3">
+                    <input type="submit" name="search" value="Search" class="btn btn-primary">
+                  </div>
+
+                </form>
+          </section>
         </div>
-
-            <form action="shop.php" method="POST">
-              <div class="row mx-auto container">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-
-
-                  <p>Category</p>
-                    <div class="form-check">
-                      <input class="form-check-input" value="shoes" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='shoes'){echo 'checked';} ?>>
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Shoes
-                      </label>
-                    </div>
-
-                    <div class="form-check">
-                      <input class="form-check-input" value="coats" type="radio" name="category" id="category_two" <?php if(isset($category) && $category=='coats'){echo 'checked';} ?>>
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Coats
-                      </label>
-                    </div>
-
-                    <div class="form-check">
-                      <input class="form-check-input" value="watches" type="radio" name="category" id="category_two" <?php if(isset($category)&& $category=='watches'){echo 'checked';} ?>>
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Watches
-                      </label>
-                    </div>
-
-                    <div class="form-check">
-                      <input class="form-check-input" value="bags" type="radio" name="category" id="category_two" <?php if(isset($category)&& $category=='bags'){echo 'checked';} ?>>
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Bags
-                      </label>
-                    </div>
-
-                </div>
-
-              </div>
-
-              <div class="row mx-auto container mt-5">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <p>Price</p>
-                    <input type="range" class="form-range w-50" name="price" value="<?php if(isset($price)) {echo $price;} else{echo "100";} ?>" min="1" max="1000" id="customRange2">
-                    <div class="w-50">
-                      <span style="float: left;">1</span>
-                      <span style="float: right;">1000</span>
-                    </div>
-                </div>
-              </div>
-
-              <div class="form-group my-3 mx-3">
-                <input type="submit" name="search" value="Search" class="btn btn-primary">
-              </div>
-
-            </form>
-      </section>
-
 
 
       <!--Feature-->
-
-      <section id="feature" class="my-5 py-5">
-        <div class="container text-center mt-5 py-5">
-            <br>
-            <h3>Our Products</h3>
-            <hr class="mx-auto">
-            <p style="font-size: 20px;">Cac san pham dinh cao</p>
-        </div>
-
-
-
-
-        <div class="row mx-auto container">
-
-          <?php while ($row = $products->fetch_assoc()) { ?>
-
-
-            <div onclick="window.location.href='single_product.php';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>" alt="">
-                <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
-                <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
-                <a class="btn buy-btn" href="<?php echo "single_product.php?product_id=".$row['product_id']; ?>">Buy Now</a>
+        <div class="main-content" style="width: 90%; padding:20px;">
+          <section id="feature" class="my-5 py-5">
+            <div class="container text-center mt-5 py-5">
+                <br>
+                <h3>Our Products</h3>
+                <hr class="mx-auto">
+                <p style="font-size: 20px;">Cac san pham dinh cao</p>
             </div>
-            
-
-          <?php } ?>
-
-      <nav aria-label="Page navigation example">
-      <ul class="pagination mt-5 mx-auto">
-            
-        <li class="page-item <?php if($page_no <=1){echo 'disabled';} ?>">
-          <a class="page-link" href="<?php if($page_no <= 1){echo '#';}else { echo "?page_no=".($page_no-1);} ?>">Previous</a>
-        </li>
 
 
-        <li class="page-item"><a class="page-link" href="?page_no=1">1</a></li>
-        <li class="page-item"><a class="page-link" href="?page_no=2">2</a></li>
-
-         <?php if( $page_no >=3) {?>
-          <li class="page-item"><a class="page-link" href="#">...</a></li>
-          <li class="page-item"><a class="page-link" href="<?php echo "?page_no=".$page_no;?>"><?php echo $page_no; ?></a></li>
-        <?php } ?> 
 
 
-        <li class="page-item <?php if($page_no >= $total_no_of_pages){echo 'disabled';}?>">
-          <a class="page-link" href="<?php if($page_no >= $total_no_of_pages){echo '#';} else{echo "?page_no=".($psge_no+1);} ?>">Next</a>
-        </li>
-      </ul>
-      </nav>
-        </div>
-    </section>
+            <div class="row mx-auto container">
 
+              <?php while ($row = $products->fetch_assoc()) { ?>
+
+
+                <div onclick="window.location.href='single_product.php';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>" alt="">
+                    <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+                    <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
+                    <a class="btn buy-btn" href="<?php echo "single_product.php?product_id=".$row['product_id']; ?>">Buy Now</a>
+                </div>
+                
+
+              <?php } ?>
+
+          <nav aria-label="Page navigation example">
+          <ul class="pagination mt-5 mx-auto">
+                
+            <li class="page-item <?php if($page_no <=1){echo 'disabled';} ?>">
+              <a class="page-link" href="<?php if($page_no <= 1){echo '#';}else { echo "?page_no=".($page_no-1);} ?>">Previous</a>
+            </li>
+
+
+            <li class="page-item"><a class="page-link" href="?page_no=1">1</a></li>
+            <li class="page-item"><a class="page-link" href="?page_no=2">2</a></li>
+
+            <?php if( $page_no >=3) {?>
+              <li class="page-item"><a class="page-link" href="#">...</a></li>
+              <li class="page-item"><a class="page-link" href="<?php echo "?page_no=".$page_no;?>"><?php echo $page_no; ?></a></li>
+            <?php } ?> 
+
+
+            <li class="page-item <?php if($page_no >= $total_no_of_pages){echo 'disabled';}?>">
+              <a class="page-link" href="<?php if($page_no >= $total_no_of_pages){echo '#';} else{echo "?page_no=".($psge_no+1);} ?>">Next</a>
+            </li>
+          </ul>
+          </nav>
+            </div>
+          </section>
+          </div>
+      </div>
+      
 
 
 
