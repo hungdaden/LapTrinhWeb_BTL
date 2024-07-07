@@ -66,6 +66,14 @@ $orders = $stmt2->get_result();
         <p class="text-center" style="color: red;"><?php echo $_GET['order_failed'];?></p>
             <?php } ?>
 
+      <?php if(isset($_GET['delete_order_success'])){ ?>
+        <p class="text-center" style="color: green;"><?php echo $_GET['delete_order_success'];?></p>
+            <?php } ?>
+
+      <?php if(isset($_GET['delete_order_failure'])){ ?>
+        <p class="text-center" style="color: red;"><?php echo $_GET['delete_order_failed'];?></p>
+            <?php } ?>
+
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -93,7 +101,7 @@ $orders = $stmt2->get_result();
               <td><?php echo $order['user_address']; ?></td>
               
               <td><a class="btn btn-primary" href="edit_order.php?order_id=<?php echo $order['order_id'];?>">Edit</a></td>
-              <td><a class="btn btn-danger" href="">Delete</a></td>
+              <td><a class="btn btn-danger" href="delete_order.php?order_id=<?php echo $order['order_id'];?>">Delete</a></td>
             </tr>
 
             <?php } ?>

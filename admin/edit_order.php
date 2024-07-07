@@ -60,13 +60,13 @@ if(isset($_GET['order_id'])){
                     <label style="font-weight: bold; font-size: 24px;"
                       >Order Price
                     </label>
-                    <p style="font-weight: bold; font-size: 24px; class="my-4"><?php echo "$" . $r['order_cost'];?></p>
+                    <p style="font-weight: bold; font-size: 24px;" class="my-4"><?php echo "$" . $r['order_cost'];?></p>
                   </div>
 
                   <input type="hidden" name="order_id" value="<?php echo $r['order_id'];?>"/>
 
                   <div class="form-group mb-3">
-                    <label style="font-size: 24px;";
+                    <label
                       >Order Status</label
                     >
                     <select
