@@ -50,23 +50,23 @@ if(isset($_GET['order_id'])){
                 <p style="color: red;"><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></?php></p>
                   <div class="form-group mb-3">
 
-                    <label
+                    <label style="font-weight: bold; font-size: 24px;"
                       >Order ID
                     </label>
-                    <p class="my-4"><?php echo $r['order_id'];?></p>
+                    <p style="font-size: 24px;" class="my-4"><?php echo $r['order_id'];?></p>
                   </div>
                   <div class="form-group mb-3">
 
-                    <label
+                    <label style="font-weight: bold; font-size: 24px;"
                       >Order Price
                     </label>
-                    <p class="my-4"><?php echo "$" . $r['order_cost'];?></p>
+                    <p style="font-weight: bold; font-size: 24px; class="my-4"><?php echo "$" . $r['order_cost'];?></p>
                   </div>
 
                   <input type="hidden" name="order_id" value="<?php echo $r['order_id'];?>"/>
 
                   <div class="form-group mb-3">
-                    <label
+                    <label style="font-size: 24px;";
                       >Order Status</label
                     >
                     <select
