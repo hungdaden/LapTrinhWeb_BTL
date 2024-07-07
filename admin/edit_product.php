@@ -148,7 +148,7 @@ if(isset($_GET['product_id'])){
                     onclick="document.getElementById('fileInput').click();"
                   ></i>
                 </div>
-                <div class="custom-file mt-2 mb-2">
+                <!-- <div class="custom-file mt-2 mb-2">
                   <input id="fileInput" type="file" style="display:none;" />
                   <input
                     type="button"
@@ -156,7 +156,7 @@ if(isset($_GET['product_id'])){
                     value="CHANGE IMAGE NOW"
                     onclick="document.getElementById('fileInput').click();"
                   />
-                </div>
+                </div> -->
               </div>
               <div class="col-12">
                 <button type="submit" name="edit_btn" class="btn btn-primary btn-block text-uppercase">Update Now</button>
