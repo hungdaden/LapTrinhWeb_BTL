@@ -33,13 +33,13 @@ if (isset($_POST['create_product'])) {
 
     $stmt->bind_param('ssssssssss',$product_name,$product_category,$product_description,$image_name1,$image_name2,$image_name3,$image_name4,$product_price,$product_special_offer,$product_color);
 
-    $stmt->execute();
+    // $stmt->execute();
     
-    // if ($stmt->execute()) {
-    //     header('location: products.php?product_created=Product has been created successfully');
-    // } else {
-    //     header('location: products.php?product_failed=Error occured, try again');
-    // }
+    if ($stmt->execute()) {
+        header('location: products.php');
+    } else {
+        header('location: add_product.php');
+    }
 
 
 
