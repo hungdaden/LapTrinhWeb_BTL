@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2024 at 02:41 PM
+-- Generation Time: Jul 07, 2024 at 05:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `php_project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(11) NOT NULL,
+  `admin_name` varchar(250) NOT NULL,
+  `admin_email` text NOT NULL,
+  `admin_password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
+(2, 'admin', 'admin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b');
 
 -- --------------------------------------------------------
 
@@ -43,13 +63,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_cost`, `order_status`, `user_id`, `user_phone`, `user_city`, `user_address`, `order_date`) VALUES
-(11, 800.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-06 14:16:34'),
-(12, 200.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-06 14:27:11'),
-(13, 200.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-06 14:33:33'),
-(14, 200.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-06 14:34:30'),
-(15, 400.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-06 14:35:36'),
-(16, 400.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-06 14:37:25'),
-(17, 1000.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-06 14:37:39');
+(19, 600.00, 'Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-06 15:02:50'),
+(20, 480.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-07 14:35:51'),
+(22, 300.00, 'Shipped', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-07 15:51:33'),
+(23, 3663.00, 'Not Paid', 1, 379297817, 'V?nh Phúc', 'Tp. V?nh Yên', '2024-07-07 17:22:06');
 
 -- --------------------------------------------------------
 
@@ -74,10 +91,12 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `product_name`, `product_image`, `product_price`, `product_quantity`, `user_id`, `order_date`) VALUES
-(3, 11, '1', 'Hut di', 'clothes1.jpeg', 0, 0, 1, '2024-07-06 14:16:34'),
-(4, 12, '1', 'Hut di', 'clothes1.jpeg', 0, 0, 1, '2024-07-06 14:27:11'),
-(5, 16, '1', 'Hut di', 'clothes1.jpeg', 200, 2, 1, '2024-07-06 14:37:25'),
-(6, 17, '1', 'Hut di', 'clothes1.jpeg', 200, 5, 1, '2024-07-06 14:37:39');
+(7, 18, '1', 'Hut di', 'clothes1.jpeg', 200, 4, 1, '2024-07-06 14:51:41'),
+(8, 19, '2', 'tui dang cap', 'bag1.jpeg', 200, 3, 1, '2024-07-06 15:02:50'),
+(9, 20, '7', 'ao', 'ao1.jepg', 160, 3, 1, '2024-07-07 14:35:51'),
+(10, 21, '4', 'Tui', 'Tui1.jepg', 100, 3, 1, '2024-07-07 15:51:01'),
+(11, 22, '4', 'Tui', 'Tui1.jepg', 100, 3, 1, '2024-07-07 15:51:33'),
+(12, 23, '14', 'Tui 28', 'Tui 281.jepg', 1221, 3, 1, '2024-07-07 17:22:06');
 
 -- --------------------------------------------------------
 
@@ -104,9 +123,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_category`, `product_description`, `product_image`, `product_image2`, `product_image3`, `product_image4`, `product_price`, `product_special_offer`, `product_color`) VALUES
-(1, 'Hut di', 'coats', 'ao dang cap', 'clothes1.jpeg', 'clothes1.jpeg', 'clothes1.jpeg', 'clothes1.jpeg', 200.00, 0, 'white'),
-(2, 'tui dang cap', 'bags', 'tui dang cap', 'bag1.jpeg', 'bag2.jpeg', 'bag3.jpeg', 'bag4.jpeg', 200.00, 0, 'black'),
-(3, 'tui b', 'bags', 'tui het dang cap', 'bag2.jpeg', 'bag1.jpeg', 'bag3.jpeg', 'bag4.jpeg', 150.00, 0, 'black');
+(2, 'tui dang cap', 'Balo', 'tui dang cap', 'bag1.jpeg', 'bag2.jpeg', 'bag3.jpeg', 'bag4.jpeg', 200.00, 0, 'black'),
+(3, 'tui b', 'Balo', 'tui het dang cap', 'bag2.jpeg', 'bag1.jpeg', 'bag3.jpeg', 'bag4.jpeg', 150.00, 0, 'black'),
+(4, 'Tui', 'Balo', 'tui dang cap', 'Tui1.jepg', 'Tui2.jepg', 'Tui3.jepg', 'Tui4.jepg', 100.00, 0, 'den'),
+(5, 'Tui 2', 'Select category', 'tui dang cap vcl', 'Tui 21.jepg', 'Tui 22.jepg', 'Tui 23.jepg', 'Tui 24.jepg', 300.00, 3, 'trang'),
+(6, 'ao', 'Ao', 'ao dep vkl', 'ao1.jepg', 'ao2.jepg', 'ao3.jepg', 'ao4.jepg', 160.00, 5, 'do'),
+(13, 'Tui 21', 'Balo', 'tui dang cap vcl sieu vip', 'Tui 211.jepg', 'Tui 212.jepg', 'Tui 213.jepg', 'Tui 214.jepg', 1002.00, 22, 'den'),
+(14, 'Tui 28', 'Ao', 'tui dang cap vcl sieu vip', 'Tui 281.jepg', 'Tui 282.jepg', 'Tui 283.jepg', 'Tui 284.jepg', 1221.00, 22, 'den');
 
 -- --------------------------------------------------------
 
@@ -126,11 +149,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
-(1, 'vuhung123', 'vuhung220224@gmail.com', 'e10adc3949ba59abbe56e057f20f883e');
+(1, 'vuhung123', 'vuhung220224@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(2, 'Le Dieu', 'dieungo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `orders`
@@ -162,28 +192,34 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
