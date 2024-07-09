@@ -28,10 +28,10 @@
                                 <label>Description</label>
                                 <input type="text" class="form-control" name="description" id="product-desc" placeholder="Description" required/>
 
-                                <label>Price</label>
-                                <input type="number" class="form-control" name="price" id="product-price" placeholder="Price" required/>
+                                <label>Price ($)</label>
+                                <input type="text" class="form-control" name="price" id="product-price" placeholder="Price" required/>
 
-                                <label>Special Offer/Sale</label>
+                                <label>Special Offer/Sale (%)</label>
                                 <input type="number" class="form-control" name="offer" id="product-offer" placeholder="Sale %"/>
 
                             </div>

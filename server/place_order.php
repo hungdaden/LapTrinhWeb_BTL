@@ -5,7 +5,7 @@ include('connection.php');
 
 // if user is not logged in
 if (!isset($_SESSION['logged_in'])) {
-    header('location: ../checkout.php?message=Please login/Register to place an order');
+    header('location: ../checkout.php?unlogged_message=Please login/Register to place an order');
     exit;
 
 
@@ -65,7 +65,7 @@ if (!isset($_SESSION['logged_in'])) {
 
                 ///unset($_SESSION['cart']);
 
-                header('location: ../payment.php?order_status=order placed successfully');
+                header('location: ../payment.php?order_status=Order placed Successfully');
 
 }
 

@@ -136,7 +136,7 @@ if (isset($_POST['search'])) {
         <div class="sidebar" style="width: 10%; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1);">
           <section id="search" class="my-5 py-5 ms-2">
             <div class="container mt-5 py-5">
-              <p>Search Products</p>
+              <p style="font-weight: bold;">Search Products</p>
               <hr>
             </div>
 
@@ -200,8 +200,8 @@ if (isset($_POST['search'])) {
 
       <!--Feature-->
         <div class="main-content" style="width: 90%; padding:20px;">
-          <section id="feature" class="my-5 py-5">
-            <div class="container text-center mt-5 py-5">
+          <section id="feature" class="my-0 py-5">
+            <div class="container text-center mt-0 py-5">
                 <br>
                 <h3>Our Products</h3>
                 <hr class="mx-auto">

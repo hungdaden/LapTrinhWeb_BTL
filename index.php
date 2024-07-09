@@ -32,7 +32,7 @@
             <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
                 <img class="img-fluid" src="assets/imgs/1.jpeg" alt="">
                 <div class="details text-center">
-                    <h2>Balo dep vcl</h2>
+                    <h2>Nice Bag</h2>
                     <form action="shop.php">
                         <button class="new-btn text-uppercase">Shop Now</button>
                     </form>
@@ -42,7 +42,7 @@
             <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
                 <img class="img-fluid" src="assets/imgs/2.jpeg" alt="">
                 <div class="details text-center">
-                    <h2>Ao dep vcl</h2>
+                    <h2>Shirt</h2>
                     <form action="shop.php">
                         <button class="text-uppercase">Shop Now</button>
                     </form>
@@ -52,7 +52,7 @@
             <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
                 <img class="img-fluid" src="assets/imgs/3.jpeg" alt="">
                 <div class="details text-center">
-                    <h2>Quan dep vcl</h2>
+                    <h2>Pants</h2>
                     <form action="shop.php">
                         <button class="text-uppercase">Shop Now</button>
                     </form>   
@@ -67,9 +67,9 @@
     <section id="feature" class="my-5">
       <div class="container text-center mt-5 py-5">
           <br>
-          <h3>Ao</h3>
+          <h3>Shirts</h3>
           <hr class="mx-auto">
-          <p style="font-size: 20px;">Ao dang cap</p>
+          <p style="font-size: 20px;">Our Shirt Collection</p>
       </div>
       <div class="row mx-auto container-fluid">
 
@@ -97,9 +97,9 @@
       <section id="feature" class="my-5 pb=5">
       <div class="container text-center mt-5 py-5">
           <br>
-          <h3>Quan</h3>
+          <h3>Pants</h3>
           <hr class="mx-auto">
-          <p style="font-size: 20px;">Quan dinh cao</p>
+          <p style="font-size: 20px;">Our Pant Collection</p>
       </div>
       <div class="row mx-auto container-fluid">
       <?php include('server/get_quan.php'); ?>
@@ -119,7 +119,7 @@
     <section id="banner" class="my-5 py-5">
       <div class="container">
         <h4>Summer Time's Sale</h4>
-        <h1>Bo suu tap mua he <br> Up to 50% OFF</h1>
+        <h1>Summer Time Collection<br> Up to 50% OFF</h1>
         <form action="shop.php">
             <button class="text-uppercase">Shop Now</button>
         </form>
@@ -135,7 +135,7 @@
           <br>
           <h3>Bag</h3>
           <hr class="mx-auto">
-          <p style="font-size: 20px;">Balo dinh cao</p>
+          <p style="font-size: 20px;">Our Bag Collection</p>
       </div>
       <div class="row mx-auto container-fluid">
       <?php include('server/get_balo.php'); ?>
@@ -155,9 +155,9 @@
   <section id="feature" class="my-5 pb=5">
       <div class="container text-center mt-5 py-5">
           <br>
-          <h3>Phu kien</h3>
+          <h3>Accessories</h3>
           <hr class="mx-auto">
-          <p style="font-size: 20px;">Phu kien dinh cao</p>
+          <p style="font-size: 20px;">Our Accessories Collection</p>
       </div>
       <div class="row mx-auto container-fluid">
       <?php include('server/get_phu_kien.php'); ?>

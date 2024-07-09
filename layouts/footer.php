@@ -32,7 +32,10 @@
               </div>
               <div>
                 <h6 class="text-uppercase">Email</h6>
-                <p>info@email.com</p>
+                <p>hunghoang00a@gmail.com</p>
+                <p>vuhung220224@gmail.com</p>
+                <p>dieule419@gmail.com</p>
+                <p>tuanzkt2711@gmail.com</p>
               </div>
           </div>
 

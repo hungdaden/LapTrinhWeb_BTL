@@ -2,7 +2,7 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php">
+            <a style="cursor: default; font-size: 24px; color: black;" class="nav-link active" aria-current="page" href="index.php">
               <span data-feather="home"></span>
               Dashboard
             </a>
@@ -30,12 +30,6 @@
             <a class="nav-link" href="add_product.php">
               <span data-feather="users"></span>
               Add New Product
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              Help
             </a>
           </li>
         </ul>

@@ -37,6 +37,7 @@ if (!empty($_SESSION['cart']) ) {
     <!--Checkout Page-->
     <section class="my-5 py-5">
         <div class="container text-center mt-3 pt-5">
+            <p class="text-center" style="color:red"><?php if(isset($_GET['unlogged_message'])) { echo $_GET['unlogged_message'] ;} ?></p>
             <h2 class="form-weight-bold">Checkout</h2>
             <hr class="mx-auto">
         </div>
@@ -64,7 +65,7 @@ if (!empty($_SESSION['cart']) ) {
                     <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Address" required/>
                 </div>
                 <div class="form-group checkout-btn-container">
-                    <p>Total amount: $ <?php echo $_SESSION['total']; ?></p>
+                    <p style="font-weight: bold; font-size: 24px;">Total amount: $ <?php echo $_SESSION['total']; ?></p>
                     <input type="submit" class="btn" id="checkout-btn" name= "place_order" value="Place Order"/>
                 </div>
             </form>
