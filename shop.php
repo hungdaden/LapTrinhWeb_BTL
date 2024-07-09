@@ -147,28 +147,28 @@ if (isset($_POST['search'])) {
 
                       <p>Category</p>
                         <div class="form-check">
-                          <input class="form-check-input" value="ao" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='Ao'){echo 'checked';} ?>>
+                          <input class="form-check-input" value="Ao" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='Ao'){echo 'checked';} ?>>
                           <label class="form-check-label" for="flexRadioDefault1">
                             Ao
                           </label>
                         </div>
 
                         <div class="form-check">
-                          <input class="form-check-input" value="quan" type="radio" name="category" id="category_two" <?php if(isset($category) && $category=='quan'){echo 'checked';} ?>>
+                          <input class="form-check-input" value="Quan" type="radio" name="category" id="category_two" <?php if(isset($category) && $category=='Quan'){echo 'checked';} ?>>
                           <label class="form-check-label" for="flexRadioDefault2">
                             Quan
                           </label>
                         </div>
 
                         <div class="form-check">
-                          <input class="form-check-input" value="balo" type="radio" name="category" id="category_two" <?php if(isset($category)&& $category=='Balo'){echo 'checked';} ?>>
+                          <input class="form-check-input" value="Balo" type="radio" name="category" id="category_two" <?php if(isset($category)&& $category=='Balo'){echo 'checked';} ?>>
                           <label class="form-check-label" for="flexRadioDefault2">
                             Balo
                           </label>
                         </div>
 
                         <div class="form-check">
-                          <input class="form-check-input" value="phu_kien" type="radio" name="category" id="category_two" <?php if(isset($category)&& $category=='Phu_kien'){echo 'checked';} ?>>
+                          <input class="form-check-input" value="Phu_kien" type="radio" name="category" id="category_two" <?php if(isset($category)&& $category=='Phu_kien'){echo 'checked';} ?>>
                           <label class="form-check-label" for="flexRadioDefault2">
                             Phu kien
                           </label>
@@ -236,15 +236,16 @@ if (isset($_POST['search'])) {
 
             <li class="page-item"><a class="page-link" href="?page_no=1">1</a></li>
             <li class="page-item"><a class="page-link" href="?page_no=2">2</a></li>
+            <li class="page-item"><a class="page-link" href="?page_no=3">3</a></li>
 
-            <?php if( $page_no >=3) {?>
+            <?php if( $page_no >=4) {?>
               <li class="page-item"><a class="page-link" href="#">...</a></li>
               <li class="page-item"><a class="page-link" href="<?php echo "?page_no=".$page_no;?>"><?php echo $page_no; ?></a></li>
             <?php } ?> 
 
 
             <li class="page-item <?php if($page_no >= $total_no_of_pages){echo 'disabled';}?>">
-              <a class="page-link" href="<?php if($page_no >= $total_no_of_pages){echo '#';} else{echo "?page_no=".($psge_no+1);} ?>">Next</a>
+              <a class="page-link" href="<?php if($page_no >= $total_no_of_pages){echo '#';} else{echo "?page_no=".($page_no+1);} ?>">Next</a>
             </li>
           </ul>
           </nav>

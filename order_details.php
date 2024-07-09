@@ -59,10 +59,6 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-
-              <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
               </li>
 
@@ -93,7 +89,7 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
 
       <table class="mt-5 pt-5 mx-auto">
           <tr>
-              <th>Produce</th>
+              <th>Product</th>
               <th>Price</th>
               <th>Quantity</th>
           </tr>
