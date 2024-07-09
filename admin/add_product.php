@@ -32,7 +32,7 @@
                                 <input type="text" class="form-control" name="price" id="product-price" placeholder="Price" required/>
 
                                 <label>Special Offer/Sale (%)</label>
-                                <input type="number" class="form-control" name="offer" id="product-offer" placeholder="Sale %"/>
+                                <input type="number" class="form-control" name="offer" id="product-offer" placeholder="Sale %" required/>
 
                             </div>
 
