@@ -18,10 +18,10 @@ if (isset($_POST['create_product'])) {
     $image4 = $_FILES['image4']['tmp_name'];
     $file_name = $_FILES['image1']['name'];
 
-    $image_name1 = $product_name."1.jepg";
-    $image_name2 = $product_name."2.jepg";
-    $image_name3 = $product_name."3.jepg";
-    $image_name4 = $product_name."4.jepg";
+    $image_name1 = $product_name."1.jpeg";
+    $image_name2 = $product_name."2.jpeg";
+    $image_name3 = $product_name."3.jpeg";
+    $image_name4 = $product_name."4.jpeg";
 
     move_uploaded_file($image1,"../assets/imgs/".$image_name1);
     move_uploaded_file($image2,"../assets/imgs/".$image_name2);
