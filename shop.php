@@ -205,7 +205,7 @@ if (isset($_POST['search'])) {
                 <br>
                 <h3>Our Products</h3>
                 <hr class="mx-auto">
-                <p style="font-size: 20px;">Cac san pham dinh cao</p>
+                <p style="font-size: 20px;">Product Collections</p>
             </div>
 
 
